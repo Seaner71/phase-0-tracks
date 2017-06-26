@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> NL East</title>
+	</head>
+<body>
+	<table border =1>
+		<tr>
+			<th>Team</th>
+			<th>Wins</th>
+			<th>Losses</th>
+		</tr>
+		<tr>
+			<td>Nationals</td>
+			<td>45</td>
+			<td>30</td>
+		</tr>
+		<tr>
+			<td>Braves</td>
+			<td>36</td>
+			<td>39</td>
+		</tr>
+		<tr>
+			<td>Marlins</td>
+			<td>34</td>
+			<td>40</td>
+		</tr>
+		<tr>
+			<td>Mets</td>
+			<td>34</td>
+			<td>41</td>
+		</tr>
+		<tr>
+			<td>Phillies</td>
+			<td>24</td>
+			<td>50</td>
+		</tr>
+	</table>
+	<table border=1>
+    	<tr>	
+      		<th></th>
+     		<th>ABC</th>
+     		<th>NBC</th>
+     	 	<th>CBS</th>
+    	</tr>
+    	<tr>
+      		<td>7pm-8pm</td>
+      		<td colspan ="2">Presidential Address</td>
+      		<td>60 Minutes</td>
+        </tr>
+    	<tr>
+      		<td>8pm-9pm</td>
+      		<td rowspan="2">Bad News Bears</td>
+      		<td>Fargo</td>
+      		<td>Designated Survivor</td>
+    	</tr>
+    	<tr>
+      		<td>9pm-10pm</td>
+      		<td>Always Sunny</td>
+      		<td>News</td>
+        </tr>
+</table>
+</body>
+</html>
