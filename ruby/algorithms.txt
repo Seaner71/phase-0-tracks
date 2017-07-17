@@ -1,0 +1,17 @@
+# Weightlifting Exericse Chest
+1. Walk to weightling bench.
+2. Lie back on bench with  both feet in the floor.
+3. Grasp barbell with both hands
+4. Set Count = 0
+5. Repetition Count = 0
+6. While "Repetition count" is less or equal to 12:
+	1. Lower the barbell to chest and and extended arms fully to complete a Repetition.
+    2. Count aloud aloud the Repetition Count.
+    3. Add 1 to the " Repetition Count".
+7. Rest for 30 seconds and add 1 to "Set Count":
+8. If "Set Count" is > 0 and < 3
+	- Add 5 pounds to barbell
+    - Return to step 5.
+* Otherwise:
+	- Relax and congratulate yourself on a job well done!
+    
