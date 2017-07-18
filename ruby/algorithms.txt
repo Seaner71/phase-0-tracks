@@ -11,12 +11,13 @@
 11. Begin in lower left of button panel
 12. If button == dbc_floor
 	- press button
-	else 
+	elseif 
 	- scan buttons left to right 
-	if reach button panel end
+	else reach button panel end
 	-move up 1 inch and reverse direction
+	end
 13. When dbc_floor is reached exit elevator
-
+		
 
 
 # Weightlifting Exericse Chest
