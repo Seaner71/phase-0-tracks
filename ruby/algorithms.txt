@@ -1,3 +1,24 @@
+#Robot Elevator
+1. Scan company directory from top to bottom
+2. When reach "DBC" store floor number in dbc_floor variable
+4. dbc_floor = 15
+5. Enter elevator
+6. Turn left
+7. Move forward until a wall is reached ( Wall A)
+8. Turn left
+9. Move forward until a wall is reached ( Wall B)
+10. Move backward 6 inches to view elevator button panel
+11. Begin in lower left of button panel
+12. If button == dbc_floor
+	- press button
+	else 
+	- scan buttons left to right 
+	if reach button panel end
+	-move up 1 inch and reverse direction
+13. When dbc_floor is reached exit elevator
+
+
+
 # Weightlifting Exericse Chest
 1. Walk to weightling bench.
 2. Lie back on bench with  both feet in the floor.
