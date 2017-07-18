@@ -9,8 +9,17 @@ employee_like_garlic = gets.chomp
 puts "Would you like to enroll in the company’s health insurance? "
 employee_health_insurance = gets.chomp
 employee_math_age = 2017 - employee_birth_year
-	if ((employee_math_age) == (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && (employee_like_garlic == "yes" || employee_health_insurance == "yes")
-		puts "Probably not a vampire"	
-	elsif ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && (employee_like_garlic == "no" || employee_health_insurance == "no")
-		puts "Probably a vampire"		
-		
+	if ((employee_math_age) == (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) 
+		&& (employee_like_garlic == "yes" || employee_health_insurance == "yes")
+		puts "Probably not a vampire."	
+	elsif ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) 
+		&& (employee_like_garlic == "no" || employee_health_insurance == "no")
+		puts "Probably a vampire."		
+	elsif ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) 
+		&& employee_like_garlic == "no" && employee_health_insurance == "no"
+		puts "Almost certainly a vampire."
+	elsif employee_name == "Drake Cula" || employee_name == "Tu Fang" || employee_name == "Edward Cullen"
+		puts "Definitely a vampire."		
+	else
+	  puts "Results inconclusive."
+	end
