@@ -23,14 +23,14 @@ completed_process = 0
     end
     completed_process +=1 
     case
+      when  employee_name == "Drake Cula" || employee_name == "Tu Fang" || employee_name == "Edward Cullen"
+                puts "Definitely a vampire."
     	when ((employee_math_age) == (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && (employee_like_garlic == "yes" || employee_health_insurance == "yes")
     		puts "Probably not a vampire."	
     	when ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && (employee_like_garlic == "no" || employee_health_insurance == "no")
     		  puts "Probably a vampire."		
-      	when ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && employee_like_garlic == "no" && employee_health_insurance == "no"
+      when ((employee_math_age) != (employee_claim_age) || employee_math_age == (employee_claim_age + 1)) && employee_like_garlic == "no" && employee_health_insurance == "no"
     		      puts "Almost certainly a vampire."
-    	when  employee_name == "Drake Cula" || employee_name == "Tu Fang" || employee_name == "Edward Cullen"
-    		        puts "Definitely a vampire."		
     	else
     	          puts "Results inconclusive."
       end
