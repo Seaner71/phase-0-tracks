@@ -1,9 +1,9 @@
 =begin
 Algo for Encrypt
 1. accept a string as input
-2. index each letter in the string 
 3. take first letter in the string
 4. change that letter to the next letter sequentially in the alphabet (.next function)
+	-add edge case logic
 5. repeat  for each additional letter in the string - loop steps 2 through 4
 
 Algo for Decrypt
@@ -11,29 +11,40 @@ Algo for Decrypt
 2. index each letter in the string 
 3. take first letter in the string
 4. change that letter to the next letter sequentially in the alphabet. 
-	-Logic to achieve ??  
 	-index the whole alphabet
-	- assign each letter to the alphabet index. subtract one from the assignment
+	-get nummerical position of letter. subtract one from that
+	-use (numerical position -1) to reindex to new letter
 5. repeat  for each additional letter in the string - loop steps 2 through 4
 =end
 
 def encrypt(string)
   count = 0
+  
   while count < string.length
-    string[count] = string[count].next
+  if string[count] =="z" # add edge case logic to overcome z.next = aa
+      string[count] = "a"
+  else
+    string[count] = string[count].next # increment forward one letter
+  end   
     count += 1
   end
   return string
 end
-puts encrypt("abc")
+
 
 def decrypt(string)
+  alphabet = "abcdefghijklmnopqrstuvwxyz" # set variable to alphabet for readability
   count = 0
   while count < string.length
-  string[count] =  "abcdefghijklmnopqrstuvwxyz"["abcdefghijklmnopqrstuvwxyz".index(string[count])-1]
+  string[count] =  alphabet[alphabet.index(string[count])-1] # get letter's position in alphabet -1 (convert letter to index# -1) then convert index# back to a letter 
    count += 1
   end
   return string
 end
 
-puts decrypt("ghi")
+
+puts encrypt("abc")
+puts encrypt("zed")
+puts decrypt("bcd")
+puts decrypt("afe")
+puts decrypt(encrypt("swordfish"))
