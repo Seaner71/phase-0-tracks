@@ -26,3 +26,14 @@ def encrypt(string)
   return string
 end
 puts encrypt("abc")
+
+def decrypt(string)
+  count = 0
+  while count < string.length
+  string[count] =  "abcdefghijklmnopqrstuvwxyz"["abcdefghijklmnopqrstuvwxyz".index(string[count])-1]
+   count += 1
+  end
+  return string
+end
+
+puts decrypt("ghi")
