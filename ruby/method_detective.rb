@@ -7,7 +7,7 @@
 "iNvEsTiGaTiOn".swapcase # or "iNvEsTiGaTiOn".swapcase! returning nil if no changes were made i.e on a non-letter "!" returns nil
 #=> “InVeStIgAtIoN”
 
-"zom".insert(0,"o") #index,"other_str")	
+"zom".insert(1,"o") #index,"other_str")	
 #=> “zoom”
 
 "enhance".center(20) #(width, padstr(optional))centers text within a string can pad it if desired
