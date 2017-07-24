@@ -59,7 +59,7 @@ puts "Please review the client's information. Is it correct? (y or n)?"
       else
         puts "Im sorry you can not update the information without the correct category"
 	  end
-	
+puts "Here is the client's updated information:"	
 puts client_details
 		
 end		
