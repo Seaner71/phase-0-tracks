@@ -28,7 +28,8 @@ puts client_details
 puts "Please review the client's information. Is it correct? (y or n)?"
 	client_confirm = gets.chomp
 	if client_confirm == "y"
-		puts "Thank you for entering the information. Here is the client's information:"
+	  puts "Thank you for entering the information."
+	  puts "Here is the client's information:"
 		puts client_details
 	else
 	  puts "Which information is incorrect?"
