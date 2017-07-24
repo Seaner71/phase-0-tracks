@@ -25,14 +25,14 @@
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
-"The mystery of the missing first letter".slice(0.-2) 	 
+"The mystery of the missing first letter".slice(0..-2) 	 
 # => "The case of the disappearing last lette"
 
  "The mystery of the missing first letter".slice(1..-1) 
  "The mystery of the missing first letter".delete("T")
 # => "he mystery of the missing first letter"
 
- "Elementary,    my   dear        Watson!".squeeze("")
+ "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
  "z".ord  # 122 is the ASCI Decimal for char "z"
