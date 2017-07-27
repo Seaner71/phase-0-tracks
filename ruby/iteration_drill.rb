@@ -12,10 +12,10 @@ zombie_apocalypse_supplies.each {|item| print "#{item}*"}
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
-def find_item(string)
-	zombie_apocalypse_supplies.each {|item| string.include?}
-end
-find_item("boots")
+# def find_item(string)
+# 	zombie_apocalypse_supplies.each {|item| string.include?}
+# end
+# find_item("boots")
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
@@ -29,7 +29,9 @@ find_item("boots")
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
-
+combined_supplies = (zombie_apocalypse_supplies + other_survivor_supplies).sort.uniq
+puts combined_supplies
+#test
 # Hash Drills
 
 extinct_animals = {
