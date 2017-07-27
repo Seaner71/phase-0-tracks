@@ -31,6 +31,7 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
 # ----
 combined_supplies = (zombie_apocalypse_supplies + other_survivor_supplies).sort.uniq
 puts combined_supplies
+#test
 # Hash Drills
 
 extinct_animals = {
