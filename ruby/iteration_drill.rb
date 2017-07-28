@@ -86,8 +86,7 @@ p new_hash
 # ----
 year_extinct = {}
 extinct_animals.each do |animal, year|
-  year = year -3
-    year_extinct[animal] = year
+     year_extinct[animal] = year -3
   end
 p "q3 Hash"
 p extinct_animals.values 
@@ -104,20 +103,27 @@ p year_extinct
 # "Saiga Antelope"
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
 # ----
-def find_item(hash,arr)
+def is_extinct?(hash,arr)
 	hash.each  do |animal,year|
 		if animal == arr
-			puts true
+			return true
 		end 
 		end
 end
 p "q4 Hash"
 #find_item(extinct_animals,"Andean Cat")
-find_item(extinct_animals,"Dodo")
+is_extinct?(extinct_animals,"Dodo")
 # => find_item(extinct_animals,"Saiga Antelope")
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
 # your own method using #each
 # ----
-#p "q5 Hash"
+p "q5 Hash"
+
+p extinct_animals.assoc("Passenger Pigeon")
+extinct_animals.delete_if {|animal,year| animal =="Passenger Pigeon"}
+
+p extinct_animals
+
+
