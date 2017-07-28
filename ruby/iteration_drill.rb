@@ -94,26 +94,34 @@ p year_extinct.values
 p year_extinct
 
 
-# 4. You've heard that the following animals might be extinct, but you're not sure.
-# Build a method  using #each that checks if an animal is in the hash and returns true/false.
-# Call the method in your driver code with each of the following animals to check if
-# they are extinct or not:
-# "Andean Cat"
-# "Dodo"
-# "Saiga Antelope"
-# Driver code example: is_extinct?(extinct_animals, "Andean Cat")
+4. You've heard that the following animals might be extinct, but you're not sure.
+Build a method  using #each that checks if an animal is in the hash and returns true/false.
+Call the method in your driver code with each of the following animals to check if
+they are extinct or not:
+"Andean Cat"
+"Dodo"
+"Saiga Antelope"
+Driver code example: is_extinct?(extinct_animals, "Andean Cat")
 # ----
-def is_extinct?(hash,arr)
-	hash.each  do |animal,year|
-		if animal == arr
-			return true
-		end 
-		end
+extinct_animals = {
+  "Passenger Pigeon" => 1914,
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+
+def is_extinct?(animals,check_animal)
+  animals.include?(check_animal)
+   
 end
 p "q4 Hash"
-#find_item(extinct_animals,"Andean Cat")
-is_extinct?(extinct_animals,"Dodo")
-# => find_item(extinct_animals,"Saiga Antelope")
+p is_extinct?(extinct_animals,"Andean Cat")
+p is_extinct?(extinct_animals,"Dodo")
+p is_extinct?(extinct_animals,"Saiga Antelope")
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
