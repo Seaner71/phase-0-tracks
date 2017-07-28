@@ -68,7 +68,22 @@ extinct_animals.each {|bird, year| print "#{bird}-#{year}*"}
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
-extinct_animals.each {|bird, year| year > 2000}
+extinct_animals = {
+  "Passenger Pigeon" => 1914,
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+new_hash = {}
+extinct_animals.each do |animal, year|
+  if year < 2000
+    new_hash[animal] = year
+  end
+  end
+p new_hash
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
