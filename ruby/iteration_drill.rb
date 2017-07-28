@@ -1,7 +1,7 @@
 # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-                              "shotgun", "compass", "CB radio", "batteries"]
+			zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
+			                              "shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
@@ -12,14 +12,33 @@ zombie_apocalypse_supplies.each {|item| print "#{item}*"}
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
-# def find_item(string)
-# 	zombie_apocalypse_supplies.each {|item| string.include?}
-# end
-# find_item("boots")
+def find_item(arr,string)
+	arr.each  do |item|
+		if item == string
+			return true
+		end 
+	end
+end
+p find_item(zombie_apocalypse_supplies,"hatchet")
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 # ----
+# zombie_apocalypse_supplies.each do |item|
+# 	zombie_apocalypse_supplies.pop((zombie_apocalypse_supplies.length-5))
+# end
+# p zombie_apocalypse_supplies
+	
+five_items =[]
+ i = 0
+  zombie_apocalypse_supplies.each do |item|
+  	# while five_items.length < 5
+        five_items <<  item
+
+    end
+# end
+p zombie_apocalypse_supplies
+p five_items
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
@@ -47,11 +66,11 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash using #each, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
-
+extinct_animals.each {|bird, year| print "#{bird}-#{year}*"}
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
-
+extinct_animals.each {|bird, year| year > 2000}
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
@@ -65,8 +84,16 @@ extinct_animals = {
 # "Dodo"
 # "Saiga Antelope"
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
+possible_extinct = ["Andean Cat","Dodo","Saiga Antelope"]
 # ----
-
+def find_item(hash,arr)
+	hash.each  do |item|
+		if item == arr
+			return true
+		end 
+	end
+end
+p find_item(extinct_animals,possible_extinct)
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
