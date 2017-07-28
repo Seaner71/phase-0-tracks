@@ -1,7 +1,7 @@
 # Array Drills
 
-			zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-			                              "shotgun", "compass", "CB radio", "batteries"]
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
+"shotgun", "compass", "CB radio", "batteries"]
 
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
@@ -73,7 +73,9 @@ extinct_animals.each {|bird, year| year > 2000}
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
 # ----
-
+extinct_animals.each do |animal, year|
+  puts "The #{animal} went extinct in #{year-3}."
+end
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Build a method  using #each that checks if an animal is in the hash and returns true/false.
 # Call the method in your driver code with each of the following animals to check if
