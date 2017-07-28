@@ -6,7 +6,7 @@
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
 # ----
-zombie_apocalypse_supplies.each {|item| print "#{item}*"}
+zombie_apocalypse_supplies.each {|item| puts "#{item}*"}
 
 # 2. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies using #each.
@@ -19,7 +19,7 @@ def find_item(arr,string)
 		end 
 	end
 end
-p find_item(zombie_apocalypse_supplies,"hatchet")
+p find_item(zombie_apocalypse_supplies,"boots")
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
@@ -30,15 +30,13 @@ p find_item(zombie_apocalypse_supplies,"hatchet")
 # p zombie_apocalypse_supplies
 	
 five_items =[]
- i = 0
-  zombie_apocalypse_supplies.each do |item|
-  	# while five_items.length < 5
-        five_items <<  item
-
+   zombie_apocalypse_supplies[0..4].each do |item|
+  	 five_items <<  item
     end
 # end
 p zombie_apocalypse_supplies
 p five_items
+  
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
