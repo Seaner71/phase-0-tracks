@@ -94,15 +94,15 @@ p year_extinct.values
 p year_extinct
 
 
-4. You've heard that the following animals might be extinct, but you're not sure.
-Build a method  using #each that checks if an animal is in the hash and returns true/false.
-Call the method in your driver code with each of the following animals to check if
-they are extinct or not:
-"Andean Cat"
-"Dodo"
-"Saiga Antelope"
-Driver code example: is_extinct?(extinct_animals, "Andean Cat")
-# ----
+# 4. You've heard that the following animals might be extinct, but you're not sure.
+# Build a method  using #each that checks if an animal is in the hash and returns true/false.
+# Call the method in your driver code with each of the following animals to check if
+# they are extinct or not:
+# "Andean Cat"
+# "Dodo"
+# "Saiga Antelope"
+# Driver code example: is_extinct?(extinct_animals, "Andean Cat")
+# # ----
 extinct_animals = {
   "Passenger Pigeon" => 1914,
   "Tasmanian Tiger" => 1936,
