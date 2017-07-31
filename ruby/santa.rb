@@ -11,11 +11,20 @@
 		def eat_milk_and_cookies(cookie_type)
 				puts "That was a good #{cookie_type}!"
 		end
+		def age
+			@age
+		end
+		def ethnicity
+			@ethnicity
+		end
 		def celebrate_birthday
 			@age= @age + 1
 		end
 		def get_mad_at(bad_reindeer) # possible built in methods to do this (rotate, shift, )
-			@reindeer_ranking= @reindeer_ranking.index(bad_reindeer) - (@reindeer_ranking.index(bad_reindeer)+1)
+			@reindeer_ranking= @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer)))
+		end
+		def change_gender(new_gender)
+			@gender= new_gender
 		end
 	end
 
@@ -31,8 +40,9 @@
 		santas << Santa.new(example_genders[rand],example_ethnicities[rand])
 		puts "There are now #{santas.length} Santas "
 	end
+	# p "There are #{santas.count("male")} male Santas and #{santas.count("female")} female Santas"
 	p santas
 	p kringle.celebrate_birthday
-	p kringle.get_mad_at("Cupid")
+	p kringle.get_mad_at("Rudolph")
+	p kringle.change_gender("bigender")
 	p kringle
-# p "There are #{santas.count("male")} male Santas and #{santas.count("female")} female Santas"
