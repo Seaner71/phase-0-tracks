@@ -33,7 +33,19 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   puts calculate(num1,op1,num2)
 #You have a collection with things in it, do we need to count them up 1 by 1 or does the collection have a method that will tell us that 
 
+# Question 4 
+# make it so the user can enter as many formulas as they desire(potentially infinite)
+# allow user to exit by typing done
 
+loop do
+puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
+  equation = gets.chomp.split(' ')
+  break if equation == ["done"]
+  num1 = equation[0].to_i
+  op1 = equation[1]
+  num2 = equation[2].to_i
+  puts calculate(num1,op1,num2)
+end 
 # hash ={}
 # until equation == ["done"]
 # puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
