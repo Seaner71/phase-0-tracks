@@ -77,3 +77,12 @@ remove_item(list, "Lemonade")
 remove_item(list, "eggs")
 update_quantity(list, "Ice Cream", 1)
 print_list(list)
+
+
+#REFLECT
+# - I learned that while I have to fight the urge to jump into a solution right away. Psuedocoding coding offers the opportunity to think about your program as whole and helps you start on the right path from the beginning. The times I have ignored or blown through psuedo coding I have gotten into trouble
+# The trade offs of uding an array or hash are that I find arrays somewhat easier to deal with (i.e shovel operators). The hash made more sense logically as the structure. While a multi demensional array would have worked it think it would have been less efficient.
+# A method returns an object. A method is passed innpt and it does someting with it a returns it as out.It always returns something which does not explicity have to be stated. If you do not "force a return" (explicit)Ruby will return the last evaluated statement.
+# You can pass any object into a method. Strings, Fixnum, Arrays, hashes etc
+# You can pass information from one method to another by having the parameters of method B be the return value of method A.
+# the concept of psuedocoding was strengthened. method parameters and scope. While I still get tripped up on scope I am no longer tripped up for hours as I was in the past. I am realizing quicker that a method won't have acces to a variable unless it is passed in or vice versa. I struggle with predicting what my code will do before I run it. ) I feel like I am wrong about my prediction as often as I am right. I am also struggling with getting started on a program and visualizing how it will flow. I get a new question to answer and "impostor syndrome" sets in. I really really enjoy working with other students in this situation since it helps me calm down and rationally attack the problem. I feel like I m getting closer but still needs "hints" and direction to work my way out of the woods. The solo challenges and the assessments have been the most difficult.
