@@ -6,7 +6,7 @@
 #Hint - base your decesion of what the operator looks like
 #question 2
 def calculate(int,operator,int_2)
-	if operator == "+"
+  if operator == "+"
     int + int_2
   elsif operator == "-"
     int - int_2
@@ -14,6 +14,8 @@ def calculate(int,operator,int_2)
     int/int_2
   elsif operator == "*"
     int * int_2
+  else
+    puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?" 
   end
 end
  # p calculate(4,"+",5)
@@ -24,19 +26,42 @@ end
 # allow user to input a formula 
 # parse the user input to give the calculate method the parameters it needs
 # print the result of the users formula
-equation = ''
-puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
-  equation = gets.chomp.split(' ')
-  num1 = equation[0].to_i
-  op1 = equation[1]
-  num2 = equation[2].to_i
-  puts calculate(num1,op1,num2)
+
+# Commented out since it is part of mext section but wanted to show work
+
+# equation = ''
+# puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
+#   equation = gets.chomp.split(' ')
+#   num1 = equation[0].to_i
+#   op1 = equation[1]
+#   num2 = equation[2].to_i
+#   puts calculate(num1,op1,num2)
 #You have a collection with things in it, do we need to count them up 1 by 1 or does the collection have a method that will tell us that 
 
 # Question 4 
 # make it so the user can enter as many formulas as they desire(potentially infinite)
 # allow user to exit by typing done
 
+# Commented out since it is part of mext section but wanted to show work
+
+
+# loop do
+# puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
+#   equation = gets.chomp.split(' ')
+#   break if equation == ["done"]
+#   num1 = equation[0].to_i
+#   op1 = equation[1]
+#   num2 = equation[2].to_i
+#   puts calculate(num1,op1,num2)
+# end 
+
+# Question 5
+# add the users input and calculation into a data structure - Hash
+# FIGURE OUT WHERE TO PUT THE HASH - INSIDE LOOP OVERWRITES - OUTSIDE LOOP CAN'T ACCESS VARIABLE - WRAP IN A METHOD??
+# works unless user enters the same formula twice - see overwrite issue above
+# iterate through the data structure and output the key and value as string to user
+equation = ''
+result_hash ={}
 loop do
 puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
   equation = gets.chomp.split(' ')
@@ -44,23 +69,22 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   num1 = equation[0].to_i
   op1 = equation[1]
   num2 = equation[2].to_i
-  puts calculate(num1,op1,num2)
-end 
-# hash ={}
-# until equation == ["done"]
-# puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
-#   equation = gets.chomp.split(' ')
-#   break if equation == "done"
-#   p equation
-#   num1 = equation[0].to_i
-# 	op1 = equation[1]
-# 	num2 = equation[2].to_i
-# 	puts calculate(num1,op1,num2)
-#   hash[:equation] = calculate(num1,op1,num2)
-# end
+  result = calculate(num1,op1,num2) # put in else statement in method returns nil for lines 75 and 78 but double prints
+   #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
+end # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
+result_hash[equation] = result
+p "#{result_hash.values.count{|i| i != nil}} calculations performed" # doesn't increment count if value is nil
+#Good this is how to iterate through a hash.
+result_hash.each do |eq, result|
+  if result != nil # doesn't print if value is nil
+  puts "#{eq.join(" ")} = #{result}"
+  end
+end
 
-# p "#{hash.count} calculations performed"
-# #Good this is how to iterate through a hash.
-# hash.each do |eq, result|
-#   puts "#{eq} = #{result}"
-# end
+#Question 6
+# update to handle user enter errors
+# user might enter without spaces
+# user might mistype 'done' - WORK ON THIS
+# user might enter a letter instead of a number - WORK ON THIS
+# do not return output from invalid entry
+# used .Values for total calcualtions performed
