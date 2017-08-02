@@ -4,7 +4,7 @@
 
 #How could you do this problem if you didnt use send?
 #Hint - base your decesion of what the operator looks like
-#question 2
+#Question 2
 def calculate(int,operator,int_2)
   if operator == "+"
     int + int_2
@@ -15,7 +15,8 @@ def calculate(int,operator,int_2)
   elsif operator == "*"
     int * int_2
   else
-    return nil # accounts for invalid output
+   return nil # accounts for invalid output
+
   end
 end
  # p calculate(4,"+",5)
@@ -60,11 +61,13 @@ end
 # FIGURE OUT WHERE TO PUT THE HASH - INSIDE LOOP OVERWRITES - OUTSIDE LOOP CAN'T ACCESS VARIABLE - WRAP IN A METHOD??
 # works unless user enters the same formula twice - see overwrite issue above
 # iterate through the data structure and output the key and value as string to user
+
 equation = ''
 num1 = ''
 op1 = ''
 num2 = ''
 result = ''
+
 result_hash ={}
 
 loop do
@@ -90,6 +93,7 @@ puts "#{result_hash.count} calculations performed" #
 result_hash.each do |eq, result|
   puts "#{eq.join(" ")} = #{result}"
   end
+
 
 
 #Question 6
