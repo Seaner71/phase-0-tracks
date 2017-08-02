@@ -15,7 +15,7 @@ def calculate(int,operator,int_2)
   elsif operator == "*"
     int * int_2
   else
-    puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?" 
+    return nil # accounts for invalid output
   end
 end
  # p calculate(4,"+",5)
@@ -60,7 +60,13 @@ end
 # FIGURE OUT WHERE TO PUT THE HASH - INSIDE LOOP OVERWRITES - OUTSIDE LOOP CAN'T ACCESS VARIABLE - WRAP IN A METHOD??
 # works unless user enters the same formula twice - see overwrite issue above
 # iterate through the data structure and output the key and value as string to user
+equation = ''
+num1 = ''
+op1 = ''
+num2 = ''
+result = ''
 result_hash ={}
+
 loop do
 puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
   equation = gets.chomp.split(' ')
@@ -68,22 +74,27 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   num1 = equation[0].to_i
   op1 = equation[1]
   num2 = equation[2].to_i
-  calculate(num1,op1,num2) # put in else statement in method returns nil for lines 75 and 78 but double prints
-  result_hash[equation] = calculate(num1,op1,num2) #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
+  result = calculate(num1,op1,num2)
+  if result # prevents invalid output from entering the hash
+  result_hash[equation] = calculate(num1,op1,num2)
+  p result_hash
+  p result  
+  else
+  puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?" 
+  end #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
 end # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
 
-p "#{result_hash.values.count{|i| i != nil}} calculations performed" # doesn't increment count if value is nil
-#Good this is how to iterate through a hash.
+
+  
+puts "#{result_hash.count} calculations performed" #
 result_hash.each do |eq, result|
-  if result != nil # doesn't print if value is nil
   puts "#{eq.join(" ")} = #{result}"
   end
-end
+
 
 #Question 6
 # update to handle user enter errors
 # user might enter without spaces
-# user might mistype 'done' - WORK ON THIS
-# user might enter a letter instead of a number - WORK ON THIS
-# do not return output from invalid entry
-# used .Values for total calcualtions performed
+# user might mistype 'done' # when a user enters invalid line 17 else statement returns nil. line 75 puts error message for nil
+# user might enter a letter instead of a number 
+# do not collect output from invalid entry # lines 72 -
