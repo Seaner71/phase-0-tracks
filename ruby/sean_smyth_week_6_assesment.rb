@@ -60,7 +60,7 @@ end
 # FIGURE OUT WHERE TO PUT THE HASH - INSIDE LOOP OVERWRITES - OUTSIDE LOOP CAN'T ACCESS VARIABLE - WRAP IN A METHOD??
 # works unless user enters the same formula twice - see overwrite issue above
 # iterate through the data structure and output the key and value as string to user
-equation = ''
+# equation = ''
 result_hash ={}
 loop do
 puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)"
@@ -69,10 +69,10 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   num1 = equation[0].to_i
   op1 = equation[1]
   num2 = equation[2].to_i
-  result = calculate(num1,op1,num2) # put in else statement in method returns nil for lines 75 and 78 but double prints
-   #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
+  result = calculate(num1,op1,num2) 
+  result_hash[equation] = result #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
 end # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
-result_hash[equation] = result
+
 p "#{result_hash.values.count{|i| i != nil}} calculations performed" # doesn't increment count if value is nil
 #Good this is how to iterate through a hash.
 result_hash.each do |eq, result|
