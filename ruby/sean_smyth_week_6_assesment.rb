@@ -15,7 +15,7 @@ def calculate(int,operator,int_2)
   elsif operator == "*"
     int * int_2
   else
-    puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?" 
+    return nil
   end
 end
  # p calculate(4,"+",5)
@@ -70,15 +70,19 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   op1 = equation[1]
   num2 = equation[2].to_i
   result = calculate(num1,op1,num2) 
-  result_hash[equation] = result #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
-end # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
+  if result != nil # doesnt add result to hash if input is invalid
+    p result
+    result_hash[equation] = result #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
+  else puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?"
+  end   
+end 
 
-p "#{result_hash.values.count{|i| i != nil}} calculations performed" # doesn't increment count if value is nil
+puts "#{result_hash.count} calcualtions performed" 
 #Good this is how to iterate through a hash.
 result_hash.each do |eq, result|
-  if result != nil # doesn't print if value is nil
+  # if result != nil # doesn't print if value is nil
   puts "#{eq.join(" ")} = #{result}"
-  end
+  # end
 end
 
 #Question 6
