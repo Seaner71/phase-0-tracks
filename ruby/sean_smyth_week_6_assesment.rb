@@ -79,15 +79,13 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   num2 = equation[2].to_i
   result = calculate(num1,op1,num2)
   if result # prevents invalid output from entering the hash
-  result_hash[equation] = calculate(num1,op1,num2)
-  p result_hash
+  result_hash[equation] = calculate(num1,op1,num2) #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUE EQUATIONS
+  # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
   p result  
   else
   puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?" 
-  end #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS
-end # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
-
-
+  end 
+end 
   
 puts "#{result_hash.count} calculations performed" #
 result_hash.each do |eq, result|
