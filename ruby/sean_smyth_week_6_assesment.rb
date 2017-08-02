@@ -4,7 +4,7 @@
 
 #How could you do this problem if you didnt use send?
 #Hint - base your decesion of what the operator looks like
-#question 2
+#Question 2
 def calculate(int,operator,int_2)
   if operator == "+"
     int + int_2
@@ -71,7 +71,7 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   num2 = equation[2].to_i
   result = calculate(num1,op1,num2) 
   if result  # doesnt add result to hash if input is invalid
-    p result
+    p result # prints for good input
     result_hash[equation] = result #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
   else puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?"
   end   
