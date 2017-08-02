@@ -70,7 +70,7 @@ puts "enter an equation number with 2 integers separated by an operator(+,-,*,/)
   op1 = equation[1]
   num2 = equation[2].to_i
   result = calculate(num1,op1,num2) 
-  if result != nil # doesnt add result to hash if input is invalid
+  if result  # doesnt add result to hash if input is invalid
     p result
     result_hash[equation] = result #DOES NOT BELONG INSIDE LOOP - OVERWRITES NON UNIQUES EQUATIONS # NEED TO FIGURE OUT HASH OUTSIDE OF LOOP THAT HAS ACCESS TO VARIABLE  WRAP IN LOOP?
   else puts "The input was invalid. Did you enter it in the format 'number mathoperator number'?"
