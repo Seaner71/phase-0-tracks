@@ -10,19 +10,25 @@
 class WordGuess
   attr_reader :guess_count
   attr_accessor :is_over
+  attr_accessor :attempts
   
   def initialize 
     @guess_count = 0
     @is_over = false
+    @attempts = 0
   end
-  def check_letter(p1word, guess)
+  def check_letter(p1word, guess,p2array)
     @guess_count += 1
-    p p1word
-    if p1word.index(guess)
+    # p2word << guess
+    # p p2word
+    if p1word == p2array
       @is_over = true
     else
-      false  
-    end 
+      false
+    end
+    if p1word.include?(guess)
+      p "#{p1word.index(guess)}"
+    end
   end
 end  
 
@@ -39,9 +45,16 @@ class Player_1
   #   @word.split('')
   #   # puts "#{@word}"
   # end
-   
 end
-
+class Player_2
+  attr_accessor :array
+  def initialize
+    @array = []
+  end
+  def add_guesses(array,guess)
+    @array << guess
+  end
+end
 # user interface
 
 puts "Welcome to the Word Guesser 2000!"
@@ -52,23 +65,25 @@ puts "Player 1: enter a word for Player 2 to guess"
 word = gets.chomp
 p1 =Player_1.new(word)
 p1word = p1.word
-# p p1word.split_word(word)
-# p1word.check_letter(game, guess)
-# p (word.length * 2)
+# p2array = Player_2.new
+# p2array.add_guesses(p2array.array, guess)
+p2array = []
 while !game.is_over && game.guess_count < (word.length * 2)
   puts "Here is the word to guess"
   puts "_ " * (word.length)
-  puts "User 2 guess a letter"
+  puts "Player 2: guess a letter"
   guess = gets.chomp
-  p !game.check_letter(p1word,guess)
+  p2array << guess
+  p p2array
+  !game.check_letter(p1word,guess,p2array)
   # if game.check_letter(p1word, guess)
   #   puts "correct"
   #  else
   #    puts "try again"
   #  end
 end
-  # if !game.is_over 
-  #   puts "You had #{game.guess_count} guesses and you couldn't figure it out. maybe try a simpler word"
-  # else
-  #   puts "You won in only #{game.guess_count} guesses! Well done"
-  # end
+  if !game.is_over 
+    puts "You had #{game.guess_count} guesses and you couldn't figure it out. maybe try a simpler word"
+  else
+    puts "You won in only #{game.guess_count} guesses! Well done"
+  end
