@@ -17,7 +17,7 @@ class WordGuess
     @is_over = false
     @attempts = 0
   end
-  def check_letter(p1word, guess,p2array)
+  def check_letter(p1word, guess, p2array)
     @guess_count += 1
     # p2word << guess
     # p p2word
@@ -26,8 +26,8 @@ class WordGuess
     else
       false
     end
-    if p1word.include?( guess)
-      p "#{p1word.index(guess)}"
+    p1word.each do |letter|
+      letter == guess
     end
   end
 end  
@@ -52,8 +52,12 @@ class Player_2
     @array = []
   end
   def add_guesses(array,guess)
-    @array << guess
-    @array.uniq
+     if guess == @array[@array.length-1]
+        @array
+        # game.@guess_count -= 1
+      else
+        @array << guess
+      end
   end
 end
 # user interface
