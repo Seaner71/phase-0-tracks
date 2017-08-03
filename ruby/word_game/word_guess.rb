@@ -17,7 +17,12 @@ class WordGuess
   end
   def check_letter(p1word, guess)
     @guess_count += 1
-    p1word.include?(guess)
+    p p1word
+    if p1word.index(guess)
+      @is_over = true
+    else
+      false  
+    end 
   end
 end  
 
@@ -30,10 +35,10 @@ class Player_1
     @word = word.split('')
     # puts "#{@word}"
   end
-  def split_word (letters)
-    @word.split('')
-    # puts "#{@word}"
-  end
+  # def split_word (letters)
+  #   @word.split('')
+  #   # puts "#{@word}"
+  # end
    
 end
 
@@ -55,14 +60,15 @@ while !game.is_over && game.guess_count < (word.length * 2)
   puts "_ " * (word.length)
   puts "User 2 guess a letter"
   guess = gets.chomp
-  if game.check_letter(p1word, guess)
-    puts "correct"
-   else
-     puts "try again"
-   end
- end
-  if !game.is_over 
-    puts "You had #{game.guess_count} guesses and you couldn't figure it out. maybe try a simpler word"
-  else
-    puts "You won in only #{game.guess_count} guesses! Well done"
-  end
+  p !game.check_letter(p1word,guess)
+  # if game.check_letter(p1word, guess)
+  #   puts "correct"
+  #  else
+  #    puts "try again"
+  #  end
+end
+  # if !game.is_over 
+  #   puts "You had #{game.guess_count} guesses and you couldn't figure it out. maybe try a simpler word"
+  # else
+  #   puts "You won in only #{game.guess_count} guesses! Well done"
+  # end
