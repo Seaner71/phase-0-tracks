@@ -1,0 +1,25 @@
+Release 0 Cup game sample code
+
+Consider the following questions:
+
+What behaviors does the game have?
+ Cup game has shuffle behavior which calls .shuffle method on the array @cups
+ Cup game has check cups behavior increments @guess_count by 1 and sets variable @is_true to true or false if cups[index] == "ball"
+What state does the game have?
+ variable @cups which is an array initialized at ["ball", "empty", "empty"] 
+ variable @guess_count which is initialized at 0 
+ variable @is_over is initialized to false
+ @ guess_count is readable and is_over is readable and writable  
+ Observe how the driver code acts as a bridge between the class and the user. Are there times when user input cannot be passed directly to the class, and instead must be adjusted from "human logic" to "computer logic"?
+@ cups can not be accessed outside of the class and @guess_count is incremented by the check_cup method not in driver code 
+What would you have to change if you wanted to limit how many guesses the user gets?
+add condition to the while loop to X number of guesses. this allows exit the loop with is_true = false and then add condtion statement indicating whether the user won or lost .
+
+Release 1 Design a word game
+
+user 1 enters a word 
+user 2 has X guesses to guess user 1's word based on the length of user 1s word. (i.e 2X word.length)
+user 2 guesses a letter
+if user 2 guesses the same letter 2x is does not count as a guess
+if user guesses a correct letter in the word it is releaved in its proper postion. (_ _ _ _) and guess w = (w _ _ _)
+game ends if user guesses the word (positive message is displayed) or exceeds the guess limit (negative message is displayed)
