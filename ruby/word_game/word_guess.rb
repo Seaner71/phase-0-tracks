@@ -26,7 +26,7 @@ class WordGuess
     else
       false
     end
-    if p1word.include?(guess)
+    if p1word.include?( guess)
       p "#{p1word.index(guess)}"
     end
   end
@@ -53,6 +53,7 @@ class Player_2
   end
   def add_guesses(array,guess)
     @array << guess
+    @array.uniq
   end
 end
 # user interface
@@ -65,15 +66,16 @@ puts "Player 1: enter a word for Player 2 to guess"
 word = gets.chomp
 p1 =Player_1.new(word)
 p1word = p1.word
-# p2array = Player_2.new
-# p2array.add_guesses(p2array.array, guess)
-p2array = []
+p2 = Player_2.new
+
+# p2array = []
+
 while !game.is_over && game.guess_count < (word.length * 2)
   puts "Here is the word to guess"
   puts "_ " * (word.length)
   puts "Player 2: guess a letter"
   guess = gets.chomp
-  p2array << guess
+  p2array = p2.add_guesses(p2.array,guess)
   p p2array
   !game.check_letter(p1word,guess,p2array)
   # if game.check_letter(p1word, guess)
@@ -82,6 +84,7 @@ while !game.is_over && game.guess_count < (word.length * 2)
   #    puts "try again"
   #  end
 end
+  
   if !game.is_over 
     puts "You had #{game.guess_count} guesses and you couldn't figure it out. maybe try a simpler word"
   else
