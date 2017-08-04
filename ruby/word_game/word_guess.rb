@@ -21,17 +21,15 @@ class WordGuess
     def check_letter(p1word, guess, p2array)
     @guess_count = p2array.count 
     # p1word.each do |letter|
-    #   if letter == guess  
-      if p1word.include?(guess)
+    #   if letter == guess   
+      if p1word.include?(guess) # words with same letter more than 1X not working left each  in comments 
         puts "#{guess} is correct"
-        @correct_answer.delete_at(p1word.index(guess)) # words with same letter more than 1X not working
+        @correct_answer.delete_at(p1word.index(guess)) 
         @correct_answer.insert(p1word.index(guess), guess)
-        # p @correct_answer
       else
         puts "#{guess} is incorrect"
-        # # p @correct_answer
+       
       end
-    # end
       if p1word == @correct_answer
         p correct_answer.join('')
         @is_over = true
