@@ -20,18 +20,18 @@ class WordGuess
   end
     def check_letter(p1word, guess, p2array)
     @guess_count = p2array.count 
-    p1word.each do |letter|
-      if letter == guess  
-      # if p1word.include?(guess)
-      #   puts "#{guess} is correct"
+    # p1word.each do |letter|
+    #   if letter == guess  
+      if p1word.include?(guess)
+        puts "#{guess} is correct"
         @correct_answer.delete_at(p1word.index(guess)) # words with same letter more than 1X not working
         @correct_answer.insert(p1word.index(guess), guess)
         # p @correct_answer
       else
-        # puts "#{guess} is incorrect"
+        puts "#{guess} is incorrect"
         # # p @correct_answer
       end
-    end
+    # end
       if p1word == @correct_answer
         p correct_answer.join('')
         @is_over = true
