@@ -27,7 +27,11 @@ class WordGuess
       false
     end
     p1word.each do |letter|
-      letter == guess
+      if letter == guess  
+        puts "#{guess} is correct"
+        # ADD A THIRD ARRAY WITH ONLY CORRECT GUESSES
+        p p2array
+      end
     end
   end
 end  
@@ -65,7 +69,6 @@ end
 puts "Welcome to the Word Guesser 2000!"
 game = WordGuess.new
 
-p game.guess_count
 puts "Player 1: enter a word for Player 2 to guess"
 word = gets.chomp
 p1 =Player_1.new(word)
@@ -80,7 +83,7 @@ while !game.is_over && game.guess_count < (word.length * 2)
   puts "Player 2: guess a letter"
   guess = gets.chomp
   p2array = p2.add_guesses(p2.array,guess)
-  p p2array
+
   !game.check_letter(p1word,guess,p2array)
   # if game.check_letter(p1word, guess)
   #   puts "correct"
