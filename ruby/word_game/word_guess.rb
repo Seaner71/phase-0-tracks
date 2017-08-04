@@ -40,13 +40,13 @@ class WordGuess
     end
   end
   def find_correct_answer(word)
-    @correct_answer= Array.new(word.length)
-    @correct_answer.map! do |element|
-      if element == nil
-        "_ "
-      else element
-    end
-    end
+    @correct_answer= Array.new(word.length, "_ ")
+    # @correct_answer.map! do |element|
+    #   if element == nil
+    #     "_ "
+    #   else element
+    # end
+    # end
   end
 end  
 
