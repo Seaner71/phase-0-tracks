@@ -19,19 +19,17 @@ class WordGuess
     @attempts = 0
   end
     def check_letter(p1word, guess, p2array)
-    @guess_count = p2array.count # guessing same letter 2X IN A ROW doesnt count - how I intrepeted the question can change
-    p1word.each do |letter|
-      if letter == guess  
-      # if p1word.include?(guess)
-      #   puts "#{guess} is correct"
-        @correct_answer.delete_at(p1word.index(guess)) # words with same letter more than 1X not working
+    @guess_count = p2array.count 
+    # p1word.each do |letter|
+    #   if letter == guess   
+      if p1word.include?(guess) # words with same letter more than 1X not working left each  in comments 
+        puts "#{guess} is correct"
+        @correct_answer.delete_at(p1word.index(guess)) 
         @correct_answer.insert(p1word.index(guess), guess)
-        # p @correct_answer
       else
-        # puts "#{guess} is incorrect"
-        # # p @correct_answer
+        puts "#{guess} is incorrect"
+       
       end
-    end
       if p1word == @correct_answer
         p correct_answer.join('')
         @is_over = true
@@ -41,12 +39,6 @@ class WordGuess
   end
   def find_correct_answer(word)
     @correct_answer= Array.new(word.length, "_ ")
-    # @correct_answer.map! do |element|
-    #   if element == nil
-    #     "_ "
-    #   else element
-    # end
-    # end
   end
 end  
 
@@ -56,7 +48,7 @@ class Player_1
   attr_accessor :check_letter
 
   def initialize(word)
-    @word = word.split('')
+    @word = word.downcase.split('')
   end
 end
 class Player_2
@@ -65,9 +57,9 @@ class Player_2
     @array = []
   end
   def add_guesses(array,guess)
-     if guess == @array[@array.length-1]
+     if @array.include?(guess)
+      puts "You already guessed '#{guess}'"
         @array
-        # game.@guess_count -= 1
       else
         @array << guess
       end
