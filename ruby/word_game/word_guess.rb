@@ -1,22 +1,20 @@
 # Release 1 Design a word game
 
 # user 1 enters a word  
-# user 2 has X guesses to guess user 1's word based on the length of user 1s word. (i.e 2X word.length)
+# user 2 has X guesses to guess user 1's word based on the length of user 1s word. (2X word.length)
 # user 2 guesses a letter
 # if user 2 guesses the same letter 2x is does not count as a guess ** store in array need to change 
-# if user guesses a correct letter in the word it is releaved in its proper postion. (_ _ _ _) and guess w = (w _ _ _)
+# if user guesses a correct letter in the word it is releaved in its proper postion. west and guess w = (w _ _ _)
 # game ends if user guesses the word (positive message is displayed) or exceeds the guess limit (negative message is displayed)
 
 class WordGuess
   attr_reader :guess_count
   attr_accessor :is_over
-  attr_accessor :attempts
   attr_accessor :correct_answer
   
   def initialize 
     @guess_count = 0
     @is_over = false
-    @attempts = 0
   end
     def check_letter(p1word, guess, p2array)
     @guess_count = p2array.count 
@@ -44,9 +42,7 @@ end
 
 class Player_1  
   attr_reader :word
-  attr_reader :new_word
-  attr_accessor :check_letter
-
+  
   def initialize(word)
     @word = word.downcase.split('')
   end
