@@ -41,12 +41,6 @@ class WordGuess
   end
   def find_correct_answer(word)
     @correct_answer= Array.new(word.length, "_ ")
-    # @correct_answer.map! do |element|
-    #   if element == nil
-    #     "_ "
-    #   else element
-    # end
-    # end
   end
 end  
 
@@ -56,7 +50,7 @@ class Player_1
   attr_accessor :check_letter
 
   def initialize(word)
-    @word = word.split('')
+    @word = word.downcase.split('')
   end
 end
 class Player_2
@@ -67,7 +61,6 @@ class Player_2
   def add_guesses(array,guess)
      if guess == @array[@array.length-1]
         @array
-        # game.@guess_count -= 1
       else
         @array << guess
       end
