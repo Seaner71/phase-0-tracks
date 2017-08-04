@@ -19,7 +19,7 @@ class WordGuess
     @attempts = 0
   end
     def check_letter(p1word, guess, p2array)
-    @guess_count = p2array.count # guessing same letter 2X IN A ROW doesnt count - how I intrepeted the question can change
+    @guess_count = p2array.count 
     p1word.each do |letter|
       if letter == guess  
       # if p1word.include?(guess)
@@ -59,7 +59,8 @@ class Player_2
     @array = []
   end
   def add_guesses(array,guess)
-     if guess == @array[@array.length-1]
+     if @array.include?(guess)
+      puts "You already guessed '#{guess}'"
         @array
       else
         @array << guess
