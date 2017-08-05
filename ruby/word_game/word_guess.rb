@@ -19,6 +19,8 @@ class WordGuess
     def check_letter(player_1_word, guess, player_2_guesses)
     @guess_count = player_2_guesses.count 
       if player_1_word.include?(guess) # words with same letter more than 1X not working - Each Map other methods??
+        # https://stackoverflow.com/questions/13659696/find-indices-of-elements-that-match-a-given-condition
+        # possible solution  
         puts "#{guess} is correct"
         @correct_answer.delete_at(player_1_word.index(guess)) 
         @correct_answer.insert(player_1_word.index(guess), guess)
@@ -34,7 +36,7 @@ class WordGuess
     end
   end
   def find_correct_answer(word)
-    @correct_answer= guess_list.new(word.length, "_ ")
+    @correct_answer= Array.new(word.length, "_ ")
   end
 end  
 
