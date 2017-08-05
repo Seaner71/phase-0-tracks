@@ -9,9 +9,12 @@ describe Player_1 do
 end
 
 describe WordGuess do
+	let(:game) {WordGuess.new}
 
 	it "initializes guess_count to 0" do
-		game = WordGuess.new
 		expect(game.guess_count).to eq 0
+	end
+	it "creates an array of _ " do
+		expect(game.find_correct_answer("test")).to eq ["_ ","_ ","_ ","_ "]
 	end
 end	
