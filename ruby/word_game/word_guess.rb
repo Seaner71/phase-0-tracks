@@ -1,9 +1,9 @@
 # Release 1 Design a word game
 
-# user 1 enters a word  
+# user 1 enters a word  - turn it into array to access it
 # user 2 has X guesses to guess user 1's word based on the length of user 1s word. (2X word.length)
 # user 2 guesses a letter
-# if user 2 guesses the same letter 2x is does not count as a guess ** store in array need to change 
+# if user 2 guesses the same letter 2x is does not count as a guess - add user 2 guesses to an array if unique
 # if user guesses a correct letter in the word it is releaved in its proper postion. west and guess w = (w _ _ _)
 # game ends if user guesses the word (positive message is displayed) or exceeds the guess limit (negative message is displayed)
 
@@ -18,9 +18,7 @@ class WordGuess
   end
     def check_letter(player_1_word, guess, player_2_guesses)
     @guess_count = player_2_guesses.count 
-    # player_1_word.each do |letter|
-    #   if letter == guess   
-      if player_1_word.include?(guess) # words with same letter more than 1X not working left each  in comments 
+      if player_1_word.include?(guess) # words with same letter more than 1X not working - Each Map other methods??
         puts "#{guess} is correct"
         @correct_answer.delete_at(player_1_word.index(guess)) 
         @correct_answer.insert(player_1_word.index(guess), guess)
@@ -36,7 +34,7 @@ class WordGuess
     end
   end
   def find_correct_answer(word)
-    @correct_answer= Array.new(word.length, "_ ")
+    @correct_answer= guess_list.new(word.length, "_ ")
   end
 end  
 
@@ -48,16 +46,16 @@ class Player_1
   end
 end
 class Player_2
-  attr_accessor :array
+  attr_accessor :guess_list
   def initialize
-    @array = []
+    @guess_list = []
   end
-  def add_guesses(array,guess)
-     if @array.include?(guess)
+  def add_guesses(guess_list,guess)
+     if @guess_list.include?(guess)
         puts "You already guessed '#{guess}'"
-        @array
+        @guess_list
       else
-        @array << guess
+        @guess_list << guess
       end
   end
 end
@@ -80,7 +78,7 @@ while !game.is_over && game.guess_count < (word.length * 2)
   p answer.join('')
   puts "Player 2: guess a letter"
   guess = gets.chomp
-  player_2_guesses = p2.add_guesses(p2.array,guess)
+  player_2_guesses = p2.add_guesses(p2.guess_list,guess)
   
   !game.check_letter(player_1_word,guess,player_2_guesses)
   
