@@ -18,12 +18,13 @@ class WordGuess
   end
     def check_letter(player_1_word, guess, player_2_guesses)
     @guess_count = player_2_guesses.count 
-      if player_1_word.include?(guess) # words with same letter more than 1X not working - Each Map other methods??
-        # https://stackoverflow.com/questions/13659696/find-indices-of-elements-that-match-a-given-condition
-        # possible solution  
+      if player_1_word.include?(guess) 
         puts "#{guess} is correct"
-        @correct_answer.delete_at(player_1_word.index(guess)) 
-        @correct_answer.insert(player_1_word.index(guess), guess)
+        x = player_1_word.each_index.select{|i| player_1_word[i] == guess}  
+        x.each do |i| 
+          correct_answer.insert(i, guess)
+          correct_answer.delete_at(i+1)
+        end
       else
         puts "#{guess} is incorrect"
        
