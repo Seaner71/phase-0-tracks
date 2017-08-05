@@ -11,7 +11,7 @@ end
 describe WordGuess do
 	let(:game) {WordGuess.new}
 
-	it "initializes guess_count to 0" do
+	it "initializes guess_count to 0" downcases
 		expect(game.guess_count).to eq 0
 	end
 	it "creates an array of _ " do
