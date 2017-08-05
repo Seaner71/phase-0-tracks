@@ -16,19 +16,19 @@ class WordGuess
     @guess_count = 0
     @is_over = false
   end
-    def check_letter(p1word, guess, p2array)
-    @guess_count = p2array.count 
-    # p1word.each do |letter|
+    def check_letter(player_1_word, guess, player_2_guesses)
+    @guess_count = player_2_guesses.count 
+    # player_1_word.each do |letter|
     #   if letter == guess   
-      if p1word.include?(guess) # words with same letter more than 1X not working left each  in comments 
+      if player_1_word.include?(guess) # words with same letter more than 1X not working left each  in comments 
         puts "#{guess} is correct"
-        @correct_answer.delete_at(p1word.index(guess)) 
-        @correct_answer.insert(p1word.index(guess), guess)
+        @correct_answer.delete_at(player_1_word.index(guess)) 
+        @correct_answer.insert(player_1_word.index(guess), guess)
       else
         puts "#{guess} is incorrect"
        
       end
-      if p1word == @correct_answer
+      if player_1_word == @correct_answer
         p correct_answer.join('')
         @is_over = true
       else
@@ -54,7 +54,7 @@ class Player_2
   end
   def add_guesses(array,guess)
      if @array.include?(guess)
-      puts "You already guessed '#{guess}'"
+        puts "You already guessed '#{guess}'"
         @array
       else
         @array << guess
@@ -70,9 +70,9 @@ game = WordGuess.new
 puts "Player 1: enter a word for Player 2 to guess"
 word = gets.chomp
 p1 =Player_1.new(word)
-p1word = p1.word
+player_1_word = p1.word
 
-answer =game.find_correct_answer(p1word)
+answer =game.find_correct_answer(player_1_word)
 p2 = Player_2.new
 
 while !game.is_over && game.guess_count < (word.length * 2)
@@ -80,9 +80,9 @@ while !game.is_over && game.guess_count < (word.length * 2)
   p answer.join('')
   puts "Player 2: guess a letter"
   guess = gets.chomp
-  p2array = p2.add_guesses(p2.array,guess)
+  player_2_guesses = p2.add_guesses(p2.array,guess)
   
-  !game.check_letter(p1word,guess,p2array)
+  !game.check_letter(player_1_word,guess,player_2_guesses)
   
 end
   
