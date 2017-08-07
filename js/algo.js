@@ -13,7 +13,21 @@ function findLongest(wordPhrase) {
  		}
     
    console.log(keyValue)
-
 }
 	 	
 findLongest(phrase)
+
+function findLarge(phrase) {
+	for (var i = 0; i < (phrase.length); i++) {
+	
+  if (phrase[i] > phrase[i+1])
+  {
+    console.log(phrase[i])
+    y =	phrase.splice(i,1)
+}
+}
+	return (phrase);
+}	
+
+findLarge([11,18,17,11])
+console.log(y)
