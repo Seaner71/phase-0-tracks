@@ -4,33 +4,30 @@
 // return the longest phrase
 // 
 
-var phrase = ["long phrase","longest phrase","longer phrase"]
-
-function findLongest(wordPhrase) {
-	keyValue = {}
-	for (var i = 0; i < wordPhrase.length; i++) {
- 		keyValue[wordPhrase[i]] = wordPhrase[i].length ;
- 		}
+// function findLongest(wordPhrase) {
+// 	keyValue = {}
+// 	for (var i = 0; i < wordPhrase.length; i++) {
+//  		keyValue[wordPhrase[i]] = wordPhrase[i].length ;
+//  		}
     
-   console.log(keyValue)
-}
+//    console.log(keyValue)
+// }
 	 	
-findLongest(phrase)
+// findLongest(phrase)
 
-function findLarge(phrase) {
+function findLongest(phrase) {
+	var longlength = 0;
+	var longword = ''
 	for (var i = 0; i < (phrase.length); i++) {
-	
-  if (phrase[i] > phrase[i+1])
-  {
-    console.log(phrase[i])
-    y =	phrase.splice(i,1)
+	  if (longlength < phrase[i].length){
+    	longlength = phrase[i].length;
+    	longword =phrase[i]
 }
 }
-	return (phrase);
+	return (longword);
 }	
 
-findLarge([11,18,17,11])
-console.log(y)
+console.log(findLongest(["long phrase","longest phrase","longer phrase", "longerererer phrase"]))
 
 // Release 2 Generate Random Test Data
 
