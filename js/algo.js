@@ -36,7 +36,7 @@ for (var i = 0; i < key.length; i++){
 
 // Release 2 Generate Random Test Data
 
-function randomWord() {
+function randomWord(integer) {
 	var alpha = "abcdefghijklmnopqrstuvwxyz"
 	var randstr = ""
 	var wordlen = Math.floor(Math.random()*10) +1
@@ -44,7 +44,11 @@ function randomWord() {
 		var alphagen = Math.floor(Math.random()*25) +1   
   	randstr += alpha.charAt(alphagen)
 }
-		return randstr
+	var array = []
+for (i = 0; i < integer; i++) {	
+		array.push(randstr)
+		}
+		console.log(array)
 }
 
 
@@ -61,6 +65,7 @@ function randomWord() {
 console.log(findLongest(["long phrase","longest phrase","longer phrase"]))
 console.log(findLongest(["long phrase","longest phrase","longer phrase", "longerererer phrase"]))
 
+
 // Release 1 Driver code
 
 console.log(matchValue({name: "sean1",age: 54}, {name: "sean",age: 53}))
@@ -68,4 +73,4 @@ console.log(matchValue({name: "sean1",age: 54}, {name: "sean",age: 53}))
 console.log(matchValue({name: "Steven", age: 52}, {name: "Ste2ven", age: 54})); 
 console.log(matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})); 
 
-console.log(randomWord());
+console.log(randomWord(3));
