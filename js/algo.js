@@ -47,7 +47,7 @@ function randomWord() {
 		return randstr
 }
 
-console.log(randomWord());
+
 
 // code thoughts to get to three words
 // var randArray =[]   
@@ -65,5 +65,7 @@ console.log(findLongest(["long phrase","longest phrase","longer phrase", "longer
 
 console.log(matchValue({name: "sean1",age: 54}, {name: "sean",age: 53}))
 
-console.log(matchValue1({name: "Steven", age: 52}, {name: "Ste2ven", age: 54})); 
-// matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); 
+console.log(matchValue({name: "Steven", age: 52}, {name: "Ste2ven", age: 54})); 
+console.log(matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})); 
+
+console.log(randomWord());
