@@ -72,5 +72,6 @@ console.log(matchValue({name: "sean1",age: 54}, {name: "sean",age: 53}))
 
 console.log(matchValue({name: "Steven", age: 52}, {name: "Ste2ven", age: 54})); 
 console.log(matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})); 
+// Release 2 Driver code
 
-console.log(randomWord(3));
+console.log(randomWord(5));
