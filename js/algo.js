@@ -34,16 +34,20 @@ console.log(y)
 
 // Release 2 Generate Random Test Data
 
-function randomWord(integer) {
-	var randArray = []
-	var alpha = 
-	for (i = 0; i < integer; i++) {
-		var lengthgen = Math.floor(Math.random()*10) +1
-
-		randArray.push(lengthgen)
-	}
-	return randArray
+function randomWord() {
+	var alpha = "abcdefghijklmnopqrstuvwxyz"
+	var randstr = ""
+	var wordlen = Math.floor(Math.random()*10) +1
+  	for (i = 0; i < wordlen; i++) {
+		var alphagen = Math.floor(Math.random()*25) +1   
+  	randstr += alpha.charAt(alphagen)
+}
+		return randstr
 }
 
-console.log(randomWord(3));
-// 
+console.log(randomWord());
+
+// code thoughts to get to three words
+// var randArray =[]   
+//   for (i=0; i < integer; i++){
+// randArray.push(randstr)
