@@ -31,3 +31,19 @@ function findLarge(phrase) {
 
 findLarge([11,18,17,11])
 console.log(y)
+
+// Release 2 Generate Random Test Data
+
+function randomWord(integer) {
+	var randArray = []
+	var alpha = 
+	for (i = 0; i < integer; i++) {
+		var lengthgen = Math.floor(Math.random()*10) +1
+
+		randArray.push(lengthgen)
+	}
+	return randArray
+}
+
+console.log(randomWord(3));
+// 
