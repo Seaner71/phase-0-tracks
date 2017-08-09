@@ -1,6 +1,7 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
-
+# Rocket notation and symol notation
+#STATE_DATA is a constant. variable shouldn't be modified 
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},

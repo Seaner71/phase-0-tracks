@@ -1,11 +1,13 @@
 # Virus Predictor 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# basically copies the 'state_data'
+# reads named file and executes code
+# require wont take a file path - Ruby gems 
+# require relative for things locally
 require_relative 'state_data'
 
 class VirusPredictor
