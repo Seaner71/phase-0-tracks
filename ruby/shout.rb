@@ -28,9 +28,9 @@ phrase = gets.chomp
 
 teacher = Teacher.new
 p teacher.yell_angrily(phrase)
-p teacher.yell_happily("What are you doing?")
+p teacher.yell_happily(phrase)
 
 talkradiohost = TalkRadioHost.new
-p talkradiohost.yell_happily("Trump")
-p talkradiohost.yell_angrily("Trump")
+p talkradiohost.yell_happily(phrase)
+p talkradiohost.yell_angrily(phrase)
 
