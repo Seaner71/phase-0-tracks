@@ -35,6 +35,7 @@ for (var i = 0; i < key.length; i++){
  
 
 // Release 2 Generate Random Test Data
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
 function randomWord(integer) {
 	var alpha = "abcdefghijklmnopqrstuvwxyz"
@@ -51,14 +52,6 @@ for (i = 0; i < integer; i++) {
 		console.log(array)
 }
 
-
-
-// code thoughts to get to three words
-// var randArray =[]   
-//   for (i=0; i < integer; i++){
-// randArray.push(randstr)
-
-
 // Driver Code
 
 // Release 0 driver code
@@ -72,6 +65,12 @@ console.log(matchValue({name: "sean1",age: 54}, {name: "sean",age: 53}))
 
 console.log(matchValue({name: "Steven", age: 52}, {name: "Ste2ven", age: 54})); 
 console.log(matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})); 
-// Release 2 Driver code
+// Release 2 Driver code1
 
-console.log(randomWord(5));
+// console.log(randomWord(5));
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+	// for (i = 0; i < 2; i++) {
+	// 	console.log(randomWord(3))
+	// }
+
+console.log(randomWord(3))
