@@ -38,20 +38,18 @@ for (var i = 0; i < key.length; i++){
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
 function randomWord(integer) {
-	var alpha = "abcdefghijklmnopqrstuvwxyz"
-	var randstr = ""
-	var wordlen = Math.floor(Math.random()*10) +1
-  	for (i = 0; i < wordlen; i++) {
-		var alphagen = Math.floor(Math.random()*25) +1   
-  	randstr += alpha.charAt(alphagen)
-}
-	var array = []
-for (i = 0; i < integer; i++) {	
-		array.push(randstr)
-		}
-		console.log(array)
-}
 
+		var alpha = "abcdefghijklmnopqrstuvwxyz";
+		var randstr = "";
+		var wordlen = Math.floor(Math.random()*10) +1;
+	  var array = [];
+		for (i =0; i < 3; i++) {	
+  	    for (j = 0; j < wordlen; j++) {
+		      var alphagen = Math.floor(Math.random()*25) +1  ; 
+          	randstr += alpha.charAt(alphagen);}	
+     array.push(randstr);}
+     return array
+}
 // Driver Code
 
 // Release 0 driver code
