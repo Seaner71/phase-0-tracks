@@ -65,7 +65,7 @@ console.log(matchValue({name: "Steven", age: 52}, {name: "Ste2ven", age: 54}));
 console.log(matchValue({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})); 
 // Release 2 Driver code1
 
-// console.log(randomWord(5));
+
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 	// for (i = 0; i < 2; i++) {
 	// 	console.log(randomWord(3))
