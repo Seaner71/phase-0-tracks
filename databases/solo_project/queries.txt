@@ -1,0 +1,17 @@
+sqlite> SELECT * FROM stocks;
+1|Apple|AAPL|true
+2|Amazon|AMZN|true
+3|Exxon Mobil|XOM|false
+4|Tata Motors|TTM|true
+5|Walmart|WMT|true
+6|Target Inc.|TGT|true
+
+
+sqlite> UPDATE stocks SET us_based = "false" WHERE id =4;
+sqlite> SELECT * FROM stocks;
+1|Apple|AAPL|true
+2|Amazon|AMZN|true
+3|Exxon Mobil|XOM|	
+4|Tata Motors|TTM|false
+5|Walmart|WMT|true
+6|Target Inc.|TGT|true
