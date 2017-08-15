@@ -1,4 +1,4 @@
-sqlite> SELECT * FROM stocks;
+sqlite> SELECT * FROM stocks; # select all stocks
 1|Apple|AAPL|true
 2|Amazon|AMZN|true
 3|Exxon Mobil|XOM|false
@@ -47,3 +47,52 @@ sqlite> SELECT * FROM stocks
 2|Amazon|AMZN|true
 5|Walmart|WMT|true
 6|Target Inc.|TGT|true
+
+sqlite> select * from daily_price LEFT JOIN stocks on daily_price.stock_id = stocks.id;
+1|160.0|161.5|1.5|3467770|2017-08-14|1|1|Apple|AAPL|true
+2|980.75|976.25|-4.5|1000000|2017-08-14|2|2|Amazon|AMZN|true
+3|80.7|81.35|0.65|134287421|2017-08-14|3||||
+4|26.8|26.5|-0.3|32666613|2017-08-14|4||||
+5|87.37|85.35|-2.02|98875372|2017-08-14|5|5|Walmart|WMT|true
+6|54.5|55.25|0.75|42977|2017-08-14|6|6|Target Inc.|TGT|true
+
+sqlite> select * from daily_price INNER JOIN stocks on daily_price.stock_id = stocks.id;
+1|160.0|161.5|1.5|3467770|2017-08-14|1|1|Apple|AAPL|true
+2|980.75|976.25|-4.5|1000000|2017-08-14|2|2|Amazon|AMZN|true
+5|87.37|85.35|-2.02|98875372|2017-08-14|5|5|Walmart|WMT|true
+6|54.5|55.25|0.75|42977|2017-08-14|6|6|Target Inc.|TGT|true
+	
+
+sqlite> SELECT * from daily_price WHERE close_price > 80; ## the inner join excludes line 3 sine I delted stocks.id = 3
+1|160.0|161.5|1.5|3467770|2017-08-14|1
+2|980.75|976.25|-4.5|1000000|2017-08-14|2
+3|80.7|81.35|0.65|134287421|2017-08-14|3
+5|87.37|85.35|-2.02|98875372|2017-08-14|5
+
+sqlite> select * from daily_price INNER JOIN stocks on daily_price.stock_id = stocks.id WHERE daily_price.close_price > 80;
+1|160.0|161.5|1.5|3467770|2017-08-14|1|1|Apple|AAPL|true
+2|980.75|976.25|-4.5|1000000|2017-08-14|2|2|Amazon|AMZN|true
+5|87.37|85.35|-2.02|98875372|2017-08-14|5|5|Walmart|WMT|true
+
+sqlite> select daily_price.date, daily_price.close_price, stocks.name, stocks.symbol from daily_price INNER JOIN stocks on daily_price.stock_id = stocks.id WHERE daily_price.close_price > 80; ## same as above but only select pertinenet columns
+2017-08-14|161.5|Apple|AAPL
+2017-08-14|976.25|Amazon|AMZN
+2017-08-14|85.35|Walmart|WMT
+
+## same as above with results in DESCENDING order	
+sqlite> SELECT daily_price.date, daily_price.close_price, stocks.name, stocks.symbol from daily_price INNER JOIN stocks on daily_price.stock_id = stocks.id WHERE daily_price.close_price > 80 ORDER by stocks.symbol DESC; 
+2017-08-14|85.35|Walmart|WMT
+2017-08-14|976.25|Amazon|AMZN
+2017-08-14|161.5|Apple|AAPL
+
+sqlite> SELECT daily_price.close_price, daily_price.date, stocks.symbol FROM daily_price LEFT JOIN stocks USING(id) UNION All SELECT daily_price.close_price, daily_price.date, stocks.symbol FROM stocks LEFT JOIN daily_price USING(id); ##workaround to FULL JOIN for sqlite
+161.5|2017-08-14|AAPL
+976.25|2017-08-14|AMZN
+81.35|2017-08-14|
+26.5|2017-08-14|
+85.35|2017-08-14|WMT
+55.25|2017-08-14|TGT
+161.5|2017-08-14|AAPL
+976.25|2017-08-14|AMZN
+85.35|2017-08-14|WMT
+55.25|2017-08-14|TGT
