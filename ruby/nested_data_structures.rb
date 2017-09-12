@@ -44,10 +44,10 @@
     }
 }
 
-p portfolio[:stocks][:technology][:large_cap][1]
-p portfolio[:stocks][:technology][:large_cap].push("Netflix")
+# p portfolio[:stocks][:technology][:large_cap][1]
+# p portfolio[:stocks][:technology][:large_cap].push("Netflix")
 p portfolio[:bonds][:exxon][:"2020"]
-p portfolio[:cash]
-portfolio[:stocks][:small_cap][:"Oclaro"]=1300
-p portfolio[:stocks][:small_cap][:"Oclaro"]
-p portfolio
+p portfolio[:cash][:checking_accounts].index(50000)
+# portfolio[:stocks][:small_cap][:"Oclaro"]=1300
+# p portfolio[:stocks][:small_cap][:"Oclaro"]
+# p portfolio
