@@ -1,0 +1,69 @@
+@media (max-width: 500px) {
+    body{
+        color: #7bf2d0;
+}
+}
+h1{
+    text-align: center;
+    font-size: 24px;
+    background-image: url("43369003-tennis-ball-on-grass-tennis-court.jpg");
+    color: #ffffff;
+    padding: 40px;
+}
+table {
+   border: 1px solid green;
+   width: 100%;
+     
+}
+tr td{
+    border: 1px solid black;
+    padding: 5px;
+}
+.oldtime{
+    display: inline-block;
+    padding: 5px;
+}
+a:visited   {
+    color: blue;
+}
+a:hover {
+    color: #f26d21;
+}
+.background{
+    background-image: url("421343.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    height: 150px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    }
+#old {
+    height: 100px;
+    width: 100px;
+}
+#secondhead{
+    text-align: center;
+    font-size: 24px;
+    font-family: Times New Roman, Sans-serif;
+    border: 4px solid black;
+}
+.center{
+    margin: auto;
+    margin-top: 10px;
+    width: 40%;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.8;
+    background-color: rgb(16, 255, 0) ;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+    border: 1px solid black;
+}
+ol li {
+    list-style-type: 
+    list-style-position: outside; /* or 'inside' */
+    margin-left: 1em; /* gives 'room' for the numbers to appear in */
+}   
